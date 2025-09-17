@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faried Fahmi Portofolio</title>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+.carousel img {
+  width: 100%;
+  display: none;
+}
+.carousel img.active {
+  display: block;
+}
+
+.carousel .prev, .carousel .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.carousel .prev { left: 10px; }
+.carousel .next { right: 10px; }
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body class="theme-dark">
+  <header class="nav-wrap">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Faried Fahmi</a>
+
+        <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn outline" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="mobileToggle" class="icon-btn mobile-only" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+   
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project card sample -->
+
+                <article class="project-card" data-type="web" 
+                    data-images="">
+              <div class="card-media">
+                <img src="img/bapenda.JPG" alt="Project Thumbnail">
+              </div>
+              <div class="card-body">
+                <h3>2018</h3>
+                <p class="muted">Web Apps monitoring payment VA (virtual account) for Tax Reklame on BADAN PENDAPATAN DAERAH SURABAYA</p>
+              </div>
+            </article>
+
+          <article class="project-card" data-type="web" 
+          data-images="img/welcome.jpg, img/inserting_data.jpg, img/progress.jpg, img/shipping.jpg, img/perjalanan.jpg">
+            <div class="card-media">
+              <img src="img/welteslogin.jpg" alt="Project Thumbnail">
+            </div>
+            <div class="card-body">
+              <h3>2022</h3>
+              <p class="muted">Web Apps monitoring, proccecing, tracking data progress fabrication and loading shipment For PT. Weltes Energi Nusantara</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-type="mobile" 
+          data-images="img/bot_telegram.jpg,img/sms-email-rent.jpg,img/bot2.jpg">
+           <div class="card-media">
+            <img src="img/sms-email-rent.jpg" alt="Project Thumbnail">
+             </div>
+              <div class="card-body">
+              <h3>2025</h3>
+              <p class="muted">Telegram Bot with Python language· auto ordering email rent on sms-active.io</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-type="mobile" 
+          data-images="img/login_mobile.jpg,img/home_mobile.jpg,img/tracking_mobile_akurasi.jpg,img/tracking_mobile.jpg, img/perjalanan.jpg">
+            <div class="card-media">
+              <img src="img/home_mobile.jpg" alt="Project Thumbnail">
+            </div>
+            <div class="card-body">
+              <h3>2024</h3>
+              <p class="muted">Mobile · monitoring & proccecing data tracking shipment For PT. Weltes Energi Nusantara</p>
+            </div>
+          </article>
+
+          <!-- add more cards as desired -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal (1 saja untuk semua project) -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <div class="carousel">
+      <!-- gambar akan dimasukkan lewat jQuery -->
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </div>
+</div>
+
+   <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Fahmous Group </small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+
+  // elements
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const yearEl = document.getElementById('year');
+  yearEl.textContent = new Date().getFullYear();
+
+$(document).ready(function () {
+  $(".project-card").on("click", function () {
+    const imgList = $(this).data("images").split(",");
+    let current = 0;
+
+    function showSwal(index) {
+      Swal.fire({
+        width: '80%',   // lebih besar
+        background: "#fff",
+        html: `
+          <div id="carousel-wrapper" style="
+            position:relative;
+            width:70%;
+            margin:auto;
+            border:5px solid #333;
+            border-radius:10px;
+            overflow:hidden;
+          ">
+            <img id="carousel-img" src="${imgList[index]}" 
+                 style="width:100%;height:auto;display:block;">
+            <div id="carousel-counter" style="margin-top:10px;text-align:center;font-weight:600;color:#444;">
+              ${index + 1} / ${imgList.length}
+            </div>
+          </div>
+        `,
+        showConfirmButton: false,
+        showCloseButton: true,
+        didOpen: () => {
+          const popup = Swal.getPopup();
+          const wrapper = popup.querySelector("#carousel-wrapper");
+
+          // tombol prev
+          const prevBtn = document.createElement("button");
+          prevBtn.innerHTML = "&#10094;";
+          prevBtn.style.cssText =
+            "position:absolute;top:50%;left:20px;transform:translateY(-50%);background:rgba(0,0,0,0.6);color:white;border:none;padding:12px 18px;border-radius:50%;cursor:pointer;font-size:22px;z-index:10;";
+          prevBtn.onclick = () => {
+            current = (current - 1 + imgList.length) % imgList.length;
+            updateCarousel();
+          };
+
+          // tombol next
+          const nextBtn = document.createElement("button");
+          nextBtn.innerHTML = "&#10095;";
+          nextBtn.style.cssText =
+            "position:absolute;top:50%;right:20px;transform:translateY(-50%);background:rgba(0,0,0,0.6);color:white;border:none;padding:12px 18px;border-radius:50%;cursor:pointer;font-size:22px;z-index:10;";
+          nextBtn.onclick = () => {
+            current = (current + 1) % imgList.length;
+            updateCarousel();
+          };
+
+          wrapper.appendChild(prevBtn);
+          wrapper.appendChild(nextBtn);
+        }
+      });
+    }
+
+    function updateCarousel() {
+      const img = Swal.getPopup().querySelector("#carousel-img");
+      const counter = Swal.getPopup().querySelector("#carousel-counter");
+      img.src = imgList[current];
+      counter.textContent = `${current + 1} / ${imgList.length}`;
+    }
+
+    // tampilkan pertama
+    showSwal(current);
+  });
+});
+
+
+  </script>
+
+</body>
+</html>

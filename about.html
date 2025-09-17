@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faried Fahmi Portofolio</title>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+  <header class="nav-wrap">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Faried Fahmi</a>
+
+        <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn outline" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="mobileToggle" class="icon-btn mobile-only" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about" class="section">
+      <div class="container section-grid about-grid">
+        <div class="card about-card">
+          <h2>About</h2>
+          <p>I’m a software developer focusing on performant apps, accessible components and delightful micro-interactions. I’ve worked on PT. Weltes Energi Nusantara is a multi-disciplinary Engineering, Procurement, Construction(EPC), and Fabrication manufacturer company in Indonesia as IT software development, building responsive web app interfaces using modern HTML, CSS and JavaScript with back end language such as PHP or DART(flutter framework for cross platform mobile apps).</p>
+
+          <h3>Education</h3>
+          <ul class="timeline">
+            <li><strong>2011 — 2014</strong> — Diploma Informatic Management, Politeknik Negeri jember</li>
+            <li><strong>2008 — 2010</strong> — multimedia, Vocational School SMKN 2 Jember</li>
+          </ul>
+
+          <div style="margin-top:12px;">
+            <a class="btn" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
+          </div>
+        </div>
+
+        <aside class="card profile-card">
+          <img class="profile-photo" src="about_me.jpg" alt="Profile photo">
+          <p class="muted">Software Developer — Gresik, Indonesia</p>
+          <div class="links">
+            <a href="#"><i class= "fa-brands fa-whatsapp"></i> 0895326980503</a>
+            <a href="fariedvahm@gmail.com"><i class="fa-regular fa-envelope"></i> fariedvahm@gmail.com</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+ <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Fahmous Group </small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+  // elements
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const yearEl = document.getElementById('year');
+  yearEl.textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

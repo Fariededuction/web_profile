@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faried Fahmi Portofolio</title>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+  <header class="nav-wrap">
+    <div class="container nav-inner">
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn outline" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="mobileToggle" class="icon-btn mobile-only" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1><span class="accent">Faried Fahmi</span></h1>
+          <p class="role"></p>
+          <p class="intro">Hi everyone  <span class="wave">👋🏼</span>
+            Welcome to my portfolio website</p>
+          <div class="hero-cta">
+            <a class="btn" href="projects.html">See projects</a>
+          </div>
+
+          <div class="socials">
+            <a href="https://github.com/Fariededuction" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/faried-vahm/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/fdvahm/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- avatar placeholder -->
+          <div class="avatar">
+            <img src="buat_profile.PNG" alt="Your avatar">
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Fahmous Group </small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+        const roleElement = document.querySelector(".role");
+const text = "Your Software Developer Choice For Bussines And Etc..";
+let index = 0;
+
+function typeEffect() {
+  if (index < text.length) {
+    roleElement.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 100);
+  }
+}
+
+typeEffect();
+
+  // elements
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const yearEl = document.getElementById('year');
+  yearEl.textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

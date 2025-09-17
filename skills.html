@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faried Fahmi Portofolio</title>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+  <header class="nav-wrap">
+    <div class="container nav-inner">
+       <a class="brand" href="#home">Faried Fahmi</a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn outline" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="mobileToggle" class="icon-btn mobile-only" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+
+        <div class="tabs">
+          <div class="tab-controls" role="tablist">
+            <button class="tab-btn active" data-tab="languages" role="tab">Languages</button>
+            <button class="tab-btn" data-tab="dbms" role="tab">DBMS</button>
+          </div>
+
+          <div class="tab-panels">
+            <div class="tab-panel active" id="languages" role="tabpanel">
+              <div class="skills-grid">
+                <div class="skill">
+                  <div class="icon"><i class="fa-brands fa-html5"></i></div>
+                  <div class="meta"><strong>HTML</strong><span class="muted">95%</span></div>
+                </div>
+                <div class="skill">
+                  <div class="icon"><i class="fa-brands fa-css3-alt"></i></div>
+                  <div class="meta"><strong>CSS</strong><span class="muted">92%</span></div>
+                </div>
+                <div class="skill">
+                  <div class="icon"><i class="fa-brands fa-js-square"></i></div>
+                  <div class="meta"><strong>JavaScript</strong><span class="muted">88%</span></div>
+                </div>
+                <div class="skill">
+                  <div class="icon"><i class="fa-brands fa-php"></i></div>
+                  <div class="meta"><strong>PHP</strong><span class="muted">98%</span></div>
+                </div>
+                 <div class="skill">
+                  <div class="icon"><i class="fa-brands fa-dart-lang"></i></div>
+                  <div class="meta"><strong>Flutter</strong><span class="muted">79%</span></div>
+                </div>
+                  <div class="skill">
+                  <div class="icon"><i class="fa-brands fa-python"></i></div>
+                  <div class="meta"><strong>Phyton</strong><span class="muted">79%</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="dbms" role="tabpanel">
+              <div class="skills-grid">
+                <div class="skill"><div class="icon"><i class="fa-solid fa-database"></i></div><div class="meta"><strong>MySQL</strong><span class="muted">80%</span></div></div>
+                <div class="skill"><div class="icon"><i class="fa-solid fa-database"></i></div><div class="meta"><strong>PostgreSQL</strong><span class="muted">75%</span></div></div>
+                <div class="skill"><div class="icon"><i class="fa-solid fa-database"></i></div><div class="meta"><strong>Oracle</strong><span class="muted">85%</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Fahmous Group </small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+  // elements
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const yearEl = document.getElementById('year');
+  yearEl.textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
